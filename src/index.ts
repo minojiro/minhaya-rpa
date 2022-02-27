@@ -17,11 +17,11 @@ const QUESTION_FIELD_POS: Position = [228, 286];
 const AUTO_FILL_BUTTON_POS: Position = [128, 590];
 const SAVE_BUTTON_POS: Position = [123, 792];
 
-const DELAY_SHORT = 200;
-const DELAY_LONG = 900;
+const DELAY_SHORT = 250;
+const DELAY_LONG = 1000;
 
-robot.setMouseDelay(60);
-robot.setKeyboardDelay(80);
+robot.setMouseDelay(100);
+robot.setKeyboardDelay(100);
 
 const delay = (t: number) => new Promise((res) => setTimeout(res, t));
 const clipboardCopySync = (text: string) => {
@@ -55,9 +55,9 @@ const addItem = async (qa: QA) => {
       robot.keyTap("v", "command");
       robot.keyTap("escape");
     },
-    () => delay(DELAY_SHORT),
 
     // fill choices
+    () => delay(DELAY_SHORT),
     () => robot.scrollMouse(0, 9999),
     () => delay(DELAY_SHORT),
     () => {
