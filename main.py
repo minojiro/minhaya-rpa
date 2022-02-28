@@ -1,5 +1,5 @@
 import fire
-from add_quiz import add_quiz
+from add_quiz import AddQuiz
 import pyautogui as gui
 from time import sleep
 
@@ -7,7 +7,7 @@ from time import sleep
 class Cli(object):
 
     def add_quiz(self, csv_path):
-        add_quiz(csv_path)
+        AddQuiz().add_quiz(csv_path)
         return 'quiz added'
 
     def pos(self):
